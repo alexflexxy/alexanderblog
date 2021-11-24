@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} 
+Sign Up
+{% endblock %}
+
+{% block body_block %}
+{% load crispy_forms_tags %}
+  <div class="container jumbotron glass">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-12">
+        <div class="register"  >
+          {% if registered %}
+            <h2>Thank you for registering!</h2>
+            <h3>Please <a class="nav-link" href="{% url 'flexxi:user_login' %}">login</a></h3>
+          {% else %}
+            <h1 class="text-center">Register Here</h1><br>
+            <div class="" id="form">
+              <form enctype="multipart/form-data" method="POST">
+                {% csrf_token %}
+                {{ user_form|crispy }}
+                {{ profile_form|crispy }}
+                <input class="myButton " type="submit" name="" value="Register">
+              </form> 
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

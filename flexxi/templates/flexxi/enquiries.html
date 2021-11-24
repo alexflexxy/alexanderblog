@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %} 
+
+{% block body_block %}
+<div class="">
+	<p class="pb-3 detailed">Alex Okpere is a smart, prolific, full stack web developer with a 
+		flair for creating elegant solutions in the least amount of time. His career objective is to 
+		make positive and valued impact, serve with high sense of integrity and make the provision of 
+		standard and quality services a way of life. A regular attendee of web developer meetups and 
+		hackathons, computer science graduate and a tireless web designer/developer based in Lagos, 
+		Nigeria. His passion for web development is second to none.
+	</p>
+</div>
+<a class="btn btn-dark text-light mt-3" data-toggle="modal" data-target="#exampleModal" href="{% url 'flexxi:enquiries' %}">Enquiries</a>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-tittle" id="exampleModalLabel">Contact Me</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+				<span aria-hidden="true">&times;</span>
+			</div>
+			<div class="modal-body">
+				<h5>Email: alex.okpere@gmail.com</h5>
+				<h5>Phone: +2348027349310</h5>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

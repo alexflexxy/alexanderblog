@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} 
+User Login 
+{% endblock %}
+
+{% block body_block %}
+  <div class="container jumbotron glass">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col=12">
+        <div class="register">
+          <form method="post" action="{% url 'flexxi:user_login' %}">
+            {% csrf_token %}
+            {# Creating the login form with HTML#}
+            <fieldset>
+              <legend class="text-center">Login</legend>
+                <label for="username">Username:</label>
+                <input type="text" name="username" placeholder="Username"><br>
+                <small id="usernameHelp" class="form-text text-muted">minimum of 8 characters</small><br>
+                <label for="password">Password:</label>
+                <input type="password" name="password" placeholder="Password"><br>
+                <input class="myButton mt-3" width="170px" type="submit" name="" value="Login">
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

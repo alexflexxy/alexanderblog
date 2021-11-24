@@ -1,0 +1,61 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="{% static 'flexxi/css/bootstrap.min.css' %}" rel="stylesheet">    
+    <link href="{% static 'flexxi/css/flexxi.css' %}" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Sacramento&display=swap" rel="stylesheet">
+    <title>{% block title %} AlexanderBlog {% endblock %}</title>
+ </head>
+ <body>
+    <nav class="navbar nav-tabs navbar-expand-md bg-dark navbar-dark p-3 mb-5">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand wrap" href="{% url 'flexxi:home' %}">AlexanderBlog</a>
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse"data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-light wrap" href="{% url 'flexxi:home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light wrap" href="{% url 'flexxi:blog' %}" >Blog</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link wrap" href="{% url 'admin:index' %}"><small>Admin</small><span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+    {% block body_block %}
+    {% endblock %}
+    </div>
+    <div class="container-fluid footer bg-dark text-light mt-5">
+        <div class="col-md-12 col-sm-12 p-5">
+            <h1>Get in Touch</h1>
+            <div class="mt-4">
+                <a class="wrap" href="https://www.github.com/alexflexxy/" target="_blank">Github</a>
+                <a class="wrap" href="https://www.twitter.com/alexanderflexxy/" target="_blank">Twitter</a>
+                <a class="wrap" href="https://www.Facebook.com/Alex Okpere/" target="_blank">Facebook</a>&nbsp;
+            </div>
+            <p class="copyright mt-5">&copy copyright and designed by Alex Okpere 2021</p>
+        </div>
+    </div>
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'flexxi/js/jquery-3.3.1.slim.min.js' %}"></script>
+    <script src="{% static 'flexxi/js/popper.min.js' %}"></script>
+    <script src="{% static 'flexxi/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'flexxi/js/flexxi.js' %}"></script>
+ </body>
+</html>
