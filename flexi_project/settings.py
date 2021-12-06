@@ -16,8 +16,11 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [STATIC_DIR]
 STATIC_URL = '/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 MEDIA_DIR = os.path.join(BASE_DIR,'media')
 
 
@@ -28,7 +31,7 @@ MEDIA_DIR = os.path.join(BASE_DIR,'media')
 SECRET_KEY = 'd@43sit61k(po++s(@l3yz+5n#gm(+!7no&)l2mhvwu^-@g)mh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = False                                                          
 
 ALLOWED_HOSTS = ['phydel.pythonanywhere.com', '127.0.0.1']
 
@@ -86,12 +89,19 @@ WSGI_APPLICATION = 'flexi_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'flexxiblog',
-        'USER': 'postgres',
-        'PASSWORD': 'Omotol@33333',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+#DATABASES = {
+    #'default': {
+       # 'ENGINE': 'django.db.backends.postgresql',
+      #  'NAME': 'flexxiblog',
+       # 'USER': 'postgres',
+      #  'PASSWORD': 'Omotol@33333',
+  #  }
+#}
 
 
 # Password validation
@@ -130,7 +140,5 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATICFILES_DIRS = [MEDIA_DIR]
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+#STATICFILES_DIRS = [MEDIA_DIR]
 LOGIN_URL = '/flexxi/user_login/'
